@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 
 # Coordinates of locations
 emergency_center = [0, 0, 0]
+drone_response_city = [2, 3, 5]
+drone_response_forest = [5, 8, -4]
+drone_response_highway_A1 = [-4, -4, -2]
+drone_response_highway_A2 = [5, 1, 1]
 city = [4, 5, 9]
 forest = [10, 8, -7]
 highway_A1 = [-8, -7, -4]
@@ -26,4 +30,17 @@ ax.set_zlabel('Z')
 ax.legend()
 
 # Show the plot
+# plt.show()
+
+# Plot with 4 quick reaction drones
+ax.scatter(drone_response_city[0], drone_response_city[1],
+           drone_response_city[2], c='b', marker='+', label='Quick_Response_City')
+ax.scatter(drone_response_forest[0], drone_response_forest[1],
+           drone_response_forest[2], c='g', marker='+', label='Quick_Response_Forest')
+ax.scatter(drone_response_highway_A1[0], drone_response_highway_A1[1],
+           drone_response_highway_A1[2], c='y', marker='+', label='Quick_Response_Highway A1')
+ax.scatter(drone_response_highway_A2[0], drone_response_highway_A2[1],
+           drone_response_highway_A2[2], c='c', marker='+', label='Quick_Response_Highway A2')
+
+# Show the plot with reaction drones
 plt.show()
