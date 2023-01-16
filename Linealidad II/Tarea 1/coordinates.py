@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 
-# This script was created to display a coordinate system for Homework 1 of
-# Linealidad II using chat.openai.com as an assistant
+# This script was created to display a coordinate system for Homework 1 of Linealidad II
 
 # Coordinates of locations
 emergency_center = [0, 0, 0]
@@ -42,5 +41,14 @@ ax.scatter(drone_response_highway_A1[0], drone_response_highway_A1[1],
 ax.scatter(drone_response_highway_A2[0], drone_response_highway_A2[1],
            drone_response_highway_A2[2], c='c', marker='+', label='Quick_Response_Highway A2')
 
+# Add labels and legend
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.legend()
+plt.plot((drone_response_city[0], drone_response_city[1],
+           drone_response_city[2]), (city[0], city[1], city[2]), linestyle="--")
 # Show the plot with reaction drones
 plt.show()
+
+
