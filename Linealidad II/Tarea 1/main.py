@@ -3,22 +3,27 @@ import matplotlib.pyplot as plt
 # This script was created to display a coordinate system for Homework 1 of
 # Linealidad II using chat.openai.com as an assistant
 
+# Coordinates of locations
+emergency_center = [0, 0, 0]
+city = [4, 5, 9]
+forest = [10, 8, -7]
+highway_A1 = [-8, -7, -4]
+highway_A2 = [10, 2, 1]
+
+# Plot the locations on a 3D scatter plot
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
+ax.scatter(emergency_center[0], emergency_center[1], emergency_center[2], c='r', marker='P', label='Emergency Center')
+ax.scatter(city[0], city[1], city[2], c='b', marker='p', label='City')
+ax.scatter(forest[0], forest[1], forest[2], c='g', marker='^', label='Forest')
+ax.scatter(highway_A1[0], highway_A1[1], highway_A1[2], c='y', marker='s', label='Highway A1')
+ax.scatter(highway_A2[0], highway_A2[1], highway_A2[2], c='c', marker='s', label='Highway A2')
 
-# City
-ax.scatter(0, 0, 0, c='r', marker='o', label='City')
-
-# Forest
-ax.scatter(10, 8, -7, c='g', marker='^', label='Forest')
-
-# Highways
-ax.scatter(-8, -7, -4, c='black', marker='s', label='Highway')
-ax.scatter(10, 2, 1, c='black', marker='s')
-
-ax.set_xlabel('X-axis')
-ax.set_ylabel('Y-axis')
-ax.set_zlabel('Z-axis')
+# Add labels and legend
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
 ax.legend()
 
+# Show the plot
 plt.show()
